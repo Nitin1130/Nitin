@@ -1,0 +1,141 @@
+body{
+	padding: 15px;
+	margin: 5px;
+	font-size: 20px;
+
+
+}
+
+header{
+	background: #e4b893 ;
+	background-size: 100%;
+	padding: 20px;
+	background-image: url('../images/flywheel.jpg');
+}
+
+h1{
+	font-size: 40px;
+	color: #f8fac9;
+	text-align: center;
+}
+
+nav>a{
+	background: #e8e1e15c;
+	display: inline-block;
+	width: 22%;
+	font-variant: small-caps;
+	text-align: center;
+	font-size: 30px;
+	margin-left: 30px;
+	text-decoration: none;
+	border-radius: 22px;
+	color: #194041;
+	
+
+ }
+a:hover{
+	background: #ffffff;
+}
+.active{
+	background: #ffffff;
+}
+
+aside img{
+	display: block;
+	width: 250px;
+	height: 200px;
+	border: 4px;
+	margin: 20px 0px 10px 25px;
+	
+}
+
+.left{
+	background: #3363d3bd;
+	float: left;
+	width: 300px;
+	height: 700px;
+}
+
+.right{
+	display: block;
+}
+
+.right h2{
+	font-size: 2rem;
+	text-transform: small-caps;
+	padding: 30px 10px 20px 300px;
+	margin: 2px 2px 2px 2px;
+}
+
+.right p{
+	font-size: 25px;
+	padding-left: 310px;
+}
+
+ul{
+	padding-left: 320px;
+}
+
+table{
+	font-family: Arial,Sans-Serif,"Times New Roman",Serif;
+	font-size: 15px;
+	font-weight: 200;
+	line-height: 30px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th{
+	background: -moz-linear-gradient(top,#365b88 0%,#f0e9a2 100%);
+	background: -webkit-linear-gradient(#365b88 0%, #f0e9a2 100%);
+	background: -o-linear-gradient(#365b88 0%, #f0e9a2 100%);
+	background: linear-gradient(#365b88 0%, #f0e9a2 100%);
+	border: 5px  #2dcb9e;
+	border-bottom-style: solid;
+	border-top-right-radius: 5px ;
+	border-top-left-radius: 5px;
+	color: #871c5b;
+	opacity: 1;
+	font-family: Arial,"Times New Roman",Serif;
+}
+
+tr td{
+	opacity: 0.8;
+	padding: 5px;
+
+}
+
+th, tr td{
+	text-align: center;
+	padding: 5px;
+
+}
+
+th:first-child, tr td:first-child{
+	text-align: left;
+	padding: 5px;
+
+}
+
+
+tr:hover td{
+	opacity: 1;
+	padding: 5px;
+}
+
+td{
+	background: #73ccc9;
+	padding: 10px;
+	color: #123abc;
+	border-radius: 2px;
+}
+
+img{
+	transition: width 2s, height 1s;
+}
+
+img:hover{
+	width: 500px;
+	height: 500px;
+}
