@@ -4,6 +4,8 @@ ob_start();
 ?>
 <html>
 <head>
+
+
 <script>
 function changeIt(img)
 {
@@ -11,15 +13,16 @@ var name = img.src;
 window.location.href = "layer4_regi.php?var=" + name;
 }
 </script>
+<link rel="stylesheet" href="style.css" type="text/css"/>
 <title>
 Layer 3!
 </title>
 </head>
 <?php
-echo '<body bgcolor="#333333" text="#FFFFFF" marginwidth="45"> <br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
-</a><hr color="#CC0000">
-<center><h4>Image Layer 3/5<br><font color="orange">Complete all the layers to complete your registration !</font><br><br>
-Choose your Image ::<br><br>';
+echo '<body> <br><center><b><h1>Graphical Password Authentication System</h1></b></center>
+
+<center><h4>Image Layer 3/5<br>Complete all the layers to complete your registration !<br><br>
+Choose your Image ::<br><br></h4>';
 ?>
 
 <?php
@@ -37,10 +40,10 @@ shuffle($ar);
 
 echo '<center>';
 for($i=0;$i<=4;$i++)
-echo '<img src="images\\'.$ar[$i].'jpg" onclick="changeIt(this)" height="120" width="120"> ';
+echo '<img src="images\\'.$ar[$i].'jpg" onclick="changeIt(this)"> ';
 echo '</center>
 </body>';
-echo '<br><footer><br><br><br><br><br><br><br><br><br><br><br><i><p align="right">Designed by <a href="https://www.facebook.com/RaJarshiSarkar"><font color="white">Rajarshi Sarkar</font></a> and <a href="https://www.facebook.com/saurabh290493"><font color="white">Saurabh Garg</font></a></i></footer>';			
+		
 ?>
 
 </body>

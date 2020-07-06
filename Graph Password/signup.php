@@ -4,7 +4,7 @@ ob_start();
 ?>
 <html>
 <head><link rel="shortcut icon" href="photos/favicon.ico">
-<link rel="stylesheet" href="css.css" type="text/css"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
 <title>Signup</title>
 
 <script>
@@ -72,33 +72,58 @@ ob_start();
 
 </head>
 
-<body bgcolor="#333333" text="#FFFFFF" marginwidth="45">
+<body>
 
 <?php
 include("connect.php");
 	if(!isset($_POST['submit']))
 	{
-		echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
-<hr color="#CC0000">
-						<strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<font size="5">Signup</strong><br></font>
-			</h2>
+		echo'<br><center><b><h1>Graphical Password Authentication System</h1></font></b></center>
+
+					
+	<center>
+	
+	<h2>Sign Up Here</h2>
+
 	<form name="signup" action="signup.php" method="post" onSubmit="return validate();">
-	<p align="right">
-	Username (Less than 10 characters) : <input type ="text" name="name" onBlur="test();"><br>
-	Password : <input type="password" name="password"><br>
-	Re-Enter Password : <input type="password" name="repassword" onBlur="test2();"><br>
-	Enter Full Name : <input type ="text" name="realname"><br>
-	College Name : <input type ="text" name="collname"><br>
-	Email Address : <input type ="text" name="email"><br>
-	Phone : <input type ="number" name="phone" onBlur="test3();"><br>
+	<section>
+	
+	<div>Username : <input type ="text" name="name" onBlur="test();" placeholder="Enter Username" ></div>
+	
+
+	<div>
+	Password : <input type="password" name="password" placeholder="Enter Password"></div>
+	<div>
+	Re-Enter : <input type="password" name="re-password" onBlur="test2();" placeholder="Re-Enter Password" >
+	</div>
+	
+	<div>
+	Full Name : <input type ="text" name="realname" placeholder="Enter Full Name" >
+	</div>
+	<div>
+		College  : <input type ="text" name="collname" placeholder="Enter College Name" >
+	</div>
+	<div>
+	Email Add   : <input type ="text" name="email" placeholder="Enter Email Address" >
+	</div>
+	<div>
+	Phone No  : <input type ="number" name="phone" onBlur="test3();" placeholder="Enter Phone.No" >
+	</div>
+	<br>
+	
+	<input type="submit" value="Signup" name="submit" class="btn">
+	
+	
+	
+	
+	</section>
+	</form></center>
+	<br>
+	<center><h2>
 	All Fields are compulsory
-	<input type="submit" value="Signup" name="submit">
-	</p>
-	</form>
-	<br><br><br><br><br><br><br><br><br>
-<footer><br><i><p align="right">Designed by Rajarshi Sarkar and Saurabh Garg</i></footer>';
+	</h2></center><br>
+	<br><br><br><br><br><br><br><br><br>';
+
 	}
 
 	else 
@@ -113,21 +138,21 @@ include("connect.php");
 					$result=mysqli_query($con,"select * from user where name='$name'");
 					if (mysqli_num_rows($result)>0)
 					{
-					echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
+					echo'<br><center><b>Graphical Password Authentication System</font></b></center>
 					<hr color="#CC0000"><br><br><center>The username is already registered ! <br>Please use a different username !<br><a href="signup.php"><font color="white">Click here to signup</a>';
 					exit;return;
 					}
 					$result=mysqli_query($con,"select * from user where email='$email'");
 					if (mysqli_num_rows($result)>0)
 					{
-					echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
+					echo'<br><center><b>Graphical Password Authentication System</font></b></center>
 					<hr color="#CC0000"><br><br><center>The email is already registered ! <br>Please use a different email !<br><a href="signup.php"><font color="white">Click here to signup</a>';
 					exit;return;
 					}
 					$result=mysqli_query($con,"select * from user where phone=$phone");
 					if (mysqli_num_rows($result)>0)
 					{
-					echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
+					echo'<br><center><b>Graphical Password Authentication System</font></b></center>
 					<hr color="#CC0000"><br><br><center>The phone number is already registered ! <br>Please use a different phone number !<br><a href="signup.php"><font color="white">Click here to signup</a>';
 					exit;return;
 					}

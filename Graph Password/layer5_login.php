@@ -4,7 +4,7 @@ ob_start();
 ?>
 <html>
 <head>
-
+<link href="style.css" rel="stylesheet">
 <script>
 function changeIt(img)
 {
@@ -20,11 +20,9 @@ Layer 5!
 </title>
 </head>
 <?php
-echo '<body bgcolor="#333333" text="#FFFFFF" marginwidth="45"> <br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
-<a href="logout.php"><font color="white">Logout</font></a><hr color="#CC0000">
-<center><h4>Image Layer 5/5<br><i>After selecting any image on this layer - <br><font color="lime">If your selection sequence is correct
-then you will be redirected to your account</font> , <font color="orange">else you\'ll be redirected to to the beginning of the selection process again!</font></center>
-<center><b>Choose your Image ::</b><br><br><center>';
+echo '<body><h1>Graphical Password Authentication System</h1></center>
+<br><a href="logout.php"><h3>Logout</h3></a><br>
+<h4><center>Image Layer 5/5</h4>';
 
 
 
@@ -43,10 +41,9 @@ shuffle($ar);
 
 echo '<center>';
 for($i=0;$i<=4;$i++)
-echo '<img src="images\\'.$ar[$i].'jpg" onclick="changeIt(this)" height="120" width="120"> ';
+echo '<img src="images\\'.$ar[$i].'jpg" onclick="changeIt(this)"> ';
 echo '</center>
 </body>';
-echo '<footer><br><br><br><br><br><br><i><p align="right">Designed by <a href="https://www.facebook.com/RaJarshiSarkar"><font color="white">Rajarshi Sarkar</font></a> and <a href="https://www.facebook.com/saurabh290493"><font color="white">Saurabh Garg</font></a></i></footer>';			
 ?>
 
 </body>

@@ -2,7 +2,7 @@
 		$server="localhost";
 		$user="root";
 		$password="";
-		$database="img db";
+		$database="graphical_pwd";
 		$con=mysqli_connect($server,$user,$password,$database);
 		if(!$con)
 		echo 'Connection failed !';

@@ -6,7 +6,8 @@ ob_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><link rel="stylesheet" href="css.css" type="text/css"/>
+<head>
+<link href="style.css" rel="stylesheet">
 <link rel="shortcut icon" href="photos/favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login</title>
@@ -41,34 +42,42 @@ ob_start();
 
 </head>
 
-<body bgcolor="#333333" text="#FFFFFF" marginwidth="45">
+<body>
 <?php
 include("connect.php");
 if(!isset($_POST['submit']))
 {
-echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
-<hr color="#CC0000">';
+echo'<h1><br><center><b>Graphical Password Authentication System</b></center></h1>';
   
-           		echo'<strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                
-<font size="5">Login</strong><br></font>
-        </h2>
-<form name="login" action="login.php" method="post" onSubmit="return validate();" >
-<p align="right">
-Username : <input type ="text" name="name"><br>
-Password : <input type="password" name="password"><br>
-<input type="submit" value="Login" name="submit">
-</p>
-</form>
-<p align="right">
-If you are not registered then register <i><a href="signup.php"><font color="white">here</font></a></i><br></p><br><br><br><br><br><br><br><br><br><br><br><br>
-<footer><br><br><br><i><p align="right">Designed by <a href="https://www.facebook.com/RaJarshiSarkar"><font color="white">Rajarshi Sarkar</font></a> and <a href="https://www.facebook.com/saurabh290493"><font color="white">Saurabh Garg</font></a></i></footer>';			
+           		echo' &nbsp; 
+<center>                
+<h2>Login<br>
+</h2>
+<section>
+
+<form name="login" action="login.php" method="post" onSubmit="return validate();" class="align" >
+
+<div>
+Username</h3> : <input type ="text" name="name" class="align" placeholder="Enter Username">
+</div>
+
+<div>
+Password</h3> : <input type="password" name="password" class="align" placeholder="Enter Password">
+</div><br>
+
+<input type="submit" class="btn" value="Login" name="submit" class="align">
+
+</form></section>
+<p>
+If you are not registered then register <i><a href="signup.php">here</a></i><br></p><br><br><br><br></center>
+';			
 
 }
 		else
 		{
+			session_destroy();
 			session_start();
+			
 			$name=$_POST['name'];
 			//$name=mysql_real_escape_string($name);
 			$password=$_POST['password'];
@@ -87,9 +96,9 @@ If you are not registered then register <i><a href="signup.php"><font color="whi
 				{ 
 					
 					$row=mysqli_fetch_array($result);
-					//if($row[5]==1)
+					if($row[5]==1)
 					$_SESSION['uname']=$name;
-					//header('Location:account.php');
+					header('Location:account.php');
 					header('Location:layer1_login.php');
 					
 				}
@@ -100,9 +109,9 @@ If you are not registered then register <i><a href="signup.php"><font color="whi
 				$row=mysqli_fetch_array($result);
 				$rows=mysqli_num_rows($result);
 				if($rows==0)
-				echo'<br><center><b><font face="calibri" color="red" size=8>Graph</font><font face="calibri" size ="8">ical Password Authentication System</font></b></center>
-				<hr color="#CC0000"><center>No such user exists in our database !<br>Maybe you entered something wrong !<br><a href="login.php"><font color="white">Click here to go back</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-				<footer><i><p align="right">Designed by <a href="https://www.facebook.com/RaJarshiSarkar"><font color="white">Rajarshi Sarkar</font></a> and <a href="https://www.facebook.com/saurabh290493"><font color="white">Saurabh Garg</font></a></i></footer>';			
+				echo'<br><center><b>Graphical Password Authentication System</b></center>
+				<center>No such user exists in our database !<br>Maybe you entered something wrong !<br><a href="login.php">Click here to go back</a><br><br><br><br>
+				';			
 
 				}
 			}
